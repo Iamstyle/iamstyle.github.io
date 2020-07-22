@@ -6,10 +6,21 @@
     <description>Recent content on My Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2020 22:08:24 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2020 16:40:01 +0800</lastBuildDate>
     
 	<atom:link href="https://iamstyle.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sorting</title>
+      <link>https://iamstyle.github.io/post/sorting/</link>
+      <pubDate>Wed, 22 Jul 2020 16:40:01 +0800</pubDate>
+      
+      <guid>https://iamstyle.github.io/post/sorting/</guid>
+      <description>四种排序算法： 冒泡，选择，插入，快速
+源码如下：
+#include &amp;lt;iostream&amp;gt; using namespace std; //冒泡排序 void bubbleSort(int arr[], int n) { //从最大值处遍历数组，每次遍历完最后一个就为最大，然后j--将最大的忽略 for (int j = n; j &amp;gt; 1; j--) { //每次遍历前n-1个，数组相邻的数顺序错误就两两交换（最后一个为最大） for (int i = 0; i &amp;lt; j - 1; i++) { if (arr[i] &amp;gt; arr[i + 1]) { //两两交换 int temp = arr[i]; arr[i] = arr[i + 1]; arr[i + 1] = temp; } } } } //选择排序 void selectionSort(int arr[], int n) { //只剩下坐标为0一个数就是最小，只需要比较到下坐标为1然后插入到下坐标为1的位置即可 for (; n &amp;gt;= 1;n--) { int pos = 0; //记录当前数组中最大值的位置 int max = arr[0]; //遍历当前数组找出最大的数值的位置 for (int i = 0; i &amp;lt; n; i++) { if (max &amp;lt; arr[i]) { max = arr[i]; pos = i; } } //如果pos不在当前数组的最大位处就交换数值 if (pos !</description>
+    </item>
     
     <item>
       <title>Second Test Blog</title>

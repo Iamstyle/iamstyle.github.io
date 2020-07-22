@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Sorting // My Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.74.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Iamstyle" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://iamstyle.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sorting"/>
+<meta name="twitter:description" content="四种排序算法： 冒泡，选择，插入，快速
+源码如下：
+#include &lt;iostream&gt; using namespace std; //冒泡排序 void bubbleSort(int arr[], int n) { //从最大值处遍历数组，每次遍历完最后一个就为最大，然后j--将最大的忽略 for (int j = n; j &gt; 1; j--) { //每次遍历前n-1个，数组相邻的数顺序错误就两两交换（最后一个为最大） for (int i = 0; i &lt; j - 1; i&#43;&#43;) { if (arr[i] &gt; arr[i &#43; 1]) { //两两交换 int temp = arr[i]; arr[i] = arr[i &#43; 1]; arr[i &#43; 1] = temp; } } } } //选择排序 void selectionSort(int arr[], int n) { //只剩下坐标为0一个数就是最小，只需要比较到下坐标为1然后插入到下坐标为1的位置即可 for (; n &gt;= 1;n--) { int pos = 0; //记录当前数组中最大值的位置 int max = arr[0]; //遍历当前数组找出最大的数值的位置 for (int i = 0; i &lt; n; i&#43;&#43;) { if (max &lt; arr[i]) { max = arr[i]; pos = i; } } //如果pos不在当前数组的最大位处就交换数值 if (pos !"/>
+
+    <meta property="og:title" content="Sorting" />
+<meta property="og:description" content="四种排序算法： 冒泡，选择，插入，快速
+源码如下：
+#include &lt;iostream&gt; using namespace std; //冒泡排序 void bubbleSort(int arr[], int n) { //从最大值处遍历数组，每次遍历完最后一个就为最大，然后j--将最大的忽略 for (int j = n; j &gt; 1; j--) { //每次遍历前n-1个，数组相邻的数顺序错误就两两交换（最后一个为最大） for (int i = 0; i &lt; j - 1; i&#43;&#43;) { if (arr[i] &gt; arr[i &#43; 1]) { //两两交换 int temp = arr[i]; arr[i] = arr[i &#43; 1]; arr[i &#43; 1] = temp; } } } } //选择排序 void selectionSort(int arr[], int n) { //只剩下坐标为0一个数就是最小，只需要比较到下坐标为1然后插入到下坐标为1的位置即可 for (; n &gt;= 1;n--) { int pos = 0; //记录当前数组中最大值的位置 int max = arr[0]; //遍历当前数组找出最大的数值的位置 for (int i = 0; i &lt; n; i&#43;&#43;) { if (max &lt; arr[i]) { max = arr[i]; pos = i; } } //如果pos不在当前数组的最大位处就交换数值 if (pos !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iamstyle.github.io/post/sorting/" />
+<meta property="article:published_time" content="2020-07-22T16:40:01+08:00" />
+<meta property="article:modified_time" content="2020-07-22T16:40:01+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://iamstyle.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="Iamstyle" /></a>
+      <h1>My Hugo Site</h1>
+      <p>If you find a path with no obstacles, it probably doesn’t lead anywhere.</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/Iamstyle/iamstyle.github.io" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Sorting</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 22, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h1 id="四种排序算法">四种排序算法：</h1>
+<p>冒泡，选择，插入，快速</p>
+<p>源码如下：</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+//冒泡排序
+void bubbleSort(int arr[], int n) {
+	//从最大值处遍历数组，每次遍历完最后一个就为最大，然后j--将最大的忽略
+	for (int j = n; j &gt; 1; j--) {
+		//每次遍历前n-1个，数组相邻的数顺序错误就两两交换（最后一个为最大）
+		for (int i = 0; i &lt; j - 1; i++) {
+			if (arr[i] &gt; arr[i + 1])
+			{
+				//两两交换
+				int temp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = temp;
+			}
+		}
+	}
+
+}
+
+//选择排序
+void selectionSort(int arr[], int n) {
+	//只剩下坐标为0一个数就是最小，只需要比较到下坐标为1然后插入到下坐标为1的位置即可
+	for (; n &gt;= 1;n--) {
+		int pos = 0; //记录当前数组中最大值的位置
+		int max = arr[0];
+		//遍历当前数组找出最大的数值的位置
+		for (int i = 0; i &lt; n; i++) {
+			if (max &lt; arr[i])
+			{
+				max = arr[i];
+				pos = i;
+			}
+		}
+		//如果pos不在当前数组的最大位处就交换数值
+		if (pos != n - 1) {
+			int temp = arr[n - 1];
+			arr[n - 1] = arr[pos];
+			arr[pos] = temp;
+		}
+	}
+}
+
+//插入排序
+void insertionSort(int arr[], int n) {
+	//从下标为1开始向前插入
+	for (int i = 1; i &lt; n; i++) {
+		int key = arr[i];//key为插入数的值
+		int j = i;
+		/*从插入数组最后一位开始向前遍历，如果大于插入数则将数后移一位
+		直到其小于等于数组中的一个数或成为数组中最小的数*/
+		for (; arr[j-1] &gt; key; j--) {
+			arr[j] = arr[j - 1];
+			//插入数比数组中所有数小就跳出
+			if (j == 0)
+			{
+				break;
+			}
+		}
+		//插入数的位置为j
+		arr[j] = key;
+	}
+}
+
+//快速排序
+void quickSort(int arr[], int left, int right) {
+	if (left &gt;= right)//递归边界条件
+		return;
+	int pivod = arr[left];//记录基准数
+	//新定义
+	int l, r;
+	l = left;
+	r = right;
+	/*
+		问题：由于数组特殊，以左为基准只能先向左寻找即r--，如果先向右寻找即l++得到排序后的数组错误
+	*/
+	//循环寻找直到左右标记数相遇
+	while (l &lt; r) {
+		//向左寻找比基准数小的数
+		while (arr[r] &gt;= pivod &amp;&amp; l &lt; r) {
+			r--;
+		}
+		//向右寻找比基准数大的数
+		while (arr[l] &lt;= pivod &amp;&amp; l &lt; r) {
+			l++;
+		}
+		//数找到后进行一次交换
+		if (l &lt; r) {
+			int temp = arr[l];
+			arr[l] = arr[r];
+			arr[r] = temp;
+		}
+	}
+	//基准数归位
+	arr[left] = arr[l];
+	arr[l] = pivod;
+	//递归进行寻找
+	quickSort(arr, left, l - 1);
+	quickSort(arr, l + 1, right);
+}
+int main()
+{
+	int arr[] = {2,5,9,8,6,3,1,7,4}; //2 1 9 8 6 3 5 7 4
+	int n = sizeof(arr) / sizeof(arr[0]);//计算数组长度
+
+	//bubbleSort(arr, n);
+	//selectionSort(arr, n);
+	//insertionSort(arr, n);
+	quickSort(arr, 0, n - 1);
+
+
+	//打印排序后的数组
+	for (int i = 0; i &lt; n; i++) {
+		cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+	}
+	return 0;
+}
+</code></pre>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
